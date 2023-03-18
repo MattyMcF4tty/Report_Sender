@@ -10,6 +10,11 @@ class DamageReport extends StatelessWidget {
         theme: ThemeData(
 
         ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Hello'),
+          ),
+        ),
       );
     }
 

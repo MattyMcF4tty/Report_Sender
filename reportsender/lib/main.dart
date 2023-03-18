@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reportsender/screens/damageReport.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const DamageReport());
 }
 
 class MyApp extends StatelessWidget {
