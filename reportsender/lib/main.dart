@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reportsender/screens/damage_report.dart';
+import 'package:reportsender/style/my_colors.dart';
 
 void main() {
   runApp(const MyApp());

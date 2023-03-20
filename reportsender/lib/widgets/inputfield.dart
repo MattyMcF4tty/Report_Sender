@@ -10,11 +10,13 @@ class InputField extends StatefulWidget {
       required this.inputfieldLabel});
 
   @override
-  State<InputField> createState() => _InputField();
+  State<InputField> createState() => _InputFieldState();
 }
 
-class _InputField extends State<InputField> {
+class _InputFieldState extends State<InputField> {
   final inputfieldTextController = TextEditingController();
+  final FocusNode _inputfieldFocus = FocusNode();
+  Color _fillColor = Colors.white;
 
   @override
   void dispose() {
@@ -23,22 +25,43 @@ class _InputField extends State<InputField> {
   }
 
   @override
+  void initState() {
+    _inputfieldFocus.addListener(() {
+      if (_inputfieldFocus.hasFocus) {
+        setState(() {
+          _fillColor = Colors.white;
+        });
+      } else {
+        setState(() {
+          _fillColor = Colors.white;
+        });
+      }
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(widget.inputfieldLabel),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(2, 0, 0, 4),
+          child: Text(widget.inputfieldLabel),
+        ),
         TextField(
           controller: inputfieldTextController,
+          maxLength: 500,
+          maxLines: null,
           decoration: InputDecoration(
             hintText: widget.placeholderText,
             filled: true,
-            fillColor: Colors.white,
-            hoverColor: Colors.blue,
+            fillColor: _fillColor,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
+          focusNode: _inputfieldFocus,
         ),
       ],
     );
