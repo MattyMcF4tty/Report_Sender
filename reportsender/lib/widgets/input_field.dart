@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class InputField extends StatefulWidget {
-  const InputField({super.key});
+  final String placeholderText;
+  final String inputfieldLabel;
+
+  const InputField(
+      {super.key,
+      required this.placeholderText,
+      required this.inputfieldLabel});
 
   @override
   State<InputField> createState() => _InputField();
@@ -21,11 +27,11 @@ class _InputField extends State<InputField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("Title"),
+        Text(widget.inputfieldLabel),
         TextField(
           controller: inputfieldTextController,
           decoration: InputDecoration(
-            hintText: "Placeholder",
+            hintText: widget.placeholderText,
             filled: true,
             fillColor: Colors.white,
             hoverColor: Colors.blue,

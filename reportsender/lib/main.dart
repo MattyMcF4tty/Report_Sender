@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reportsender/widgets/input_field.dart';
+import 'package:reportsender/screens/damage_report.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,30 +18,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: const DamageReport(title: 'Damage Report'),
-    );
-  }
-}
-
-class DamageReport extends StatelessWidget {
-  const DamageReport({super.key, required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.green[200],
-      appBar: AppBar(
-        title: Text(title),
-        centerTitle: true,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          InputField(),
-          Text("t"),
-        ],
-      ),
     );
   }
 }
